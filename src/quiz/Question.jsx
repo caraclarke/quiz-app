@@ -11,6 +11,11 @@ class Question extends Component {
     
     const {question} = this.props;
     
+    var inputStyle = {
+      marginRight: 5,
+      marginLeft: 5
+    }
+    
     return (
       <div className="well">
         <h3>{question.text}</h3>
@@ -21,7 +26,7 @@ class Question extends Component {
               return(
                 <li className="list-group-item" key={choice.id}>
                   {choice.id} 
-                    <input type="radio" onChange={this.onChange.bind(this)} name={question.id} value={choice.id} />
+                    <input style={inputStyle} type="radio" onChange={this.onChange.bind(this)} name={question.id} value={choice.id} />
                   {choice.text}
                 </li>
               )
