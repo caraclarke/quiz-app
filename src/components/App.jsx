@@ -90,12 +90,20 @@ class App extends Component {
 			score: 0,
 			current: 1
 		}
-	} // end fake data
+	  } // end fake data
+  
+  setCurrent(current) {
+    this.setState({ current });
+  }
+  
+  setScore(score) {
+    this.setState({ score });
+  }
   
   render() {
     return (
       <div>
-        <QuestionList {...this.state} />
+        <QuestionList {...this.state} setCurrent={this.setCurrent.bind(this)} setScore={this.setScore.bind(this)} />
       </div>
     );
   }
